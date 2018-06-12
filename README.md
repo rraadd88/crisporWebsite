@@ -190,3 +190,17 @@ Included software:
 CRISPOR itself:
 
 * the two files crispor.py and crisporEffScores.py are released under a special license, see LICENSE.txt in this directory
+
+
+# Local installation cracking (Ubuntu 16.04)
+
+    mv genomes.sample genomes
+
+    pip install numpy scipy pandas matplotlib twobitreader
+    pip install pytabix
+    pip install xlwt
+    sudo dpkg -i libmysqlclient18_5.6.25-0ubuntu1_amd64.deb
+
+test
+
+    python crispor.py sacCer3 sampleFiles/in/sample.sacCer3.fa sampleFiles/mine/sample.sacCer3.tsv -o sampleFiles/mine/sample.sacCer3.mine.offs.tsv

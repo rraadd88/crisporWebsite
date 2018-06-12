@@ -20,36 +20,36 @@ from itertools import product
 # try to load external dependencies
 # we're going into great lengths to create a readable error message
 needModules = set(["tabix", "twobitreader", "pandas", "matplotlib", "scipy"])
-try:
-    import tabix # if not found, install with 'pip install pytabix'
-    needModules.remove("tabix")
-except:
-    pass
+# try:
+import tabix # if not found, install with 'pip install pytabix'
+needModules.remove("tabix")
+# except:
+    # pass
 
-try:
-    import twobitreader # if not found, install with 'pip install twobitreader'
-    needModules.remove("twobitreader")
-except:
-    pass
+# try:
+import twobitreader # if not found, install with 'pip install twobitreader'
+# needModules.remove("twobitreader")
+# except:
+#     pass
     
-try:
-    import pandas # required by doench2016 score. install with 'pip install pandas'
-    needModules.remove("pandas")
-    import scipy # required by doench2016 score. install with 'pip install pandas'
-    needModules.remove("scipy")
-    import matplotlib # required by doench2016 score. install with 'pip install matplotlib'
-    needModules.remove("matplotlib")
-    import numpy # required by doench2016 score. install with 'pip install numpy'
-    needModules.remove("numpy")
-except:
-    pass
+# try:
+import pandas # required by doench2016 score. install with 'pip install pandas'
+# needModules.remove("pandas")
+import scipy # required by doench2016 score. install with 'pip install pandas'
+# needModules.remove("scipy")
+import matplotlib # required by doench2016 score. install with 'pip install matplotlib'
+# needModules.remove("matplotlib")
+import numpy # required by doench2016 score. install with 'pip install numpy'
+# needModules.remove("numpy")
+# except:
+#     pass
 
-if len(needModules)!=0:
-    print("Content-type: text/html\n")
-    print("Python interpreter path: %s<p>" % sys.executable)
-    print("These python modules were not found: %s<p>" % ",".join(needModules))
-    print("To install all requirements in one line, run: sudo pip install biopython numpy scikit-learn==0.16.1 pandas twobitreader<p>")
-    sys.exit(0)
+# if len(needModules)!=0:
+#     print("Content-type: text/html\n")
+#     print("Python interpreter path: %s<p>" % sys.executable)
+#     print("These python modules were not found: %s<p>" % ",".join(needModules))
+#     print("To install all requirements in one line, run: sudo pip install biopython numpy scikit-learn==0.16.1 pandas twobitreader<p>")
+#     sys.exit(0)
 
 # our own eff scoring library
 import crisporEffScores
